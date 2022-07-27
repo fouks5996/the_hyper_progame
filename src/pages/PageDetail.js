@@ -133,8 +133,10 @@ export const PageDetail = (argument) => {
 	//*******************
 	let similarGameArray = [];
 
-	const fetchsimilarGame = async () => {
-		await fetch(`https://api.rawg.io/api/games?key=${API_KEY}`)
+	const fetchsimilarGame = async (argument) => {
+		await fetch(
+			`https://api.rawg.io/api/games/${argument}/game-series?key=${API_KEY}`
+		)
 			.then((res) => res.json())
 			.then((res) => {
 				similarGameArray = res.results;
@@ -142,7 +144,7 @@ export const PageDetail = (argument) => {
 	};
 
 	const rendersimilarGame = async () => {
-		await fetchsimilarGame();
+		await fetchsimilarGame(cleanedArgument);
 
 		const similarGameData = document.getElementById("similar-game");
 		similarGameArray.splice(5);
