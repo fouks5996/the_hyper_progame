@@ -40,6 +40,7 @@ a {
   font-family: "Avenir Next Bold";
   margin: 9px 0px 9px 0px;
   width: fit-content;
+  max-width: 360px;
 }
 
 .subject-title {
@@ -107,11 +108,12 @@ body #logo {
 .cardGame {
   position: relative;
   overflow: hidden;
-  transition: all 0.5s ease;
+  border-radius: 10px;
+  padding: 20px;
+  width: fit-content;
 }
 .cardGame:hover {
-  transform: scale(1.1);
-  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.305);
 }
 .cardGame img {
   width: 380px;
@@ -122,7 +124,7 @@ body #logo {
 .articles, #similar-game, #page-publisher {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
+  grid-gap: 50px;
   grid-auto-rows: repeat(100px, auto);
 }
 @media screen and (max-width: 1350px) {
@@ -142,14 +144,15 @@ body #logo {
   background-color: rgba(0, 0, 0, 0.668);
   transition: all 0.3s ease;
   position: absolute;
-  top: -270px;
+  top: -300px;
+  cursor: not-allowed;
 }
 .layer-info:hover {
-  top: 0px;
+  top: 20px;
 }
 
 #scroll-to:hover + .layer-info {
-  top: 0px;
+  top: 20px;
 }
 
 .page-detail-wrapper {
@@ -350,16 +353,18 @@ nav {
 
 #list-content {
   max-width: 1470px;
+  width: 100%;
 }
 
 #list-filter {
   position: relative;
 }
 #list-filter .layer-sort {
-  width: 178px;
+  width: 220px;
   height: 0px;
   position: absolute;
   background-color: white;
+  border-radius: 5px;
   top: 42px;
   left: -1;
   z-index: 2;
@@ -373,10 +378,14 @@ nav {
 #list-filter .layer-sort .reset-all {
   color: 191919;
   text-decoration: underline;
-  margin-top: 10px;
+  margin-top: 13px;
+  margin-left: 15px;
+  font-family: "Avenir Next Medium";
+  color: #D20A32 !important;
+  font-size: 1rem;
 }
 #list-filter .layer-sort:hover {
-  height: 170px;
+  height: 380px;
 }
 
 .input-wrapper {
@@ -384,12 +393,11 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-top: 15px;
+  gap: 7px;
 }
 
 #list-filter:hover > .layer-sort {
-  height: 286px;
+  height: 380px;
 }
 
 .layer-sort > div > input {
@@ -397,9 +405,30 @@ nav {
   margin: 0;
 }
 
+input[type=radio]:not(:checked), input[type=radio]:checked {
+  cursor: pointer;
+  position: absolute;
+  margin: 0;
+  z-index: 7;
+  opacity: 0;
+  width: fit-content;
+  transform: scaleX(15) scaleY(3);
+}
+
+input[type=radio]:not(:checked) + label {
+  border: 1px solid rgb(203, 203, 203);
+}
+
+input[type=radio]:checked + label {
+  background-color: #D20A32 !important;
+  color: white !important;
+}
+
 .layer-sort > div > label {
   display: none;
-  margin-top: 2px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 .layer-sort > p {

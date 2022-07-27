@@ -56,7 +56,7 @@ export const showTitles = (toEmpty, toInner) => {
 						<input type="radio" id="mac" name="filtered" value="Apple Macintosh">
 						<label for="mac">Apple Macintosh</label>
 					</div>
-					<p class="reset-all" id="reset-btn"> Reset All</p>
+					<p class="reset-all" id="reset-btn"> Reset</p>
 				</div>
 			</div>
 	`;

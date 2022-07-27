@@ -1,13 +1,15 @@
 .cardGame{
    position: relative;
    overflow: hidden;
-   transition: all 0.5s ease;
 
+   border-radius: 10px;
+   padding: 20px;
+   width: fit-content;
 
    &:hover{
-      transform: scale(1.1);
-      transition: all 0.3s ease;
+      background-color: rgba(0, 0, 0, 0.305);
    }
+
    img{
       width: 380px;
       height: 270px;
@@ -19,7 +21,7 @@
 .articles, #similar-game, #page-publisher{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
-   grid-gap: 30px;
+   grid-gap: 50px;
    grid-auto-rows: repeat(100px, auto);
 
    @media screen and (max-width: 1350px) {
@@ -36,16 +38,17 @@
    background-color: rgba(0, 0, 0, 0.668);
    transition: all 0.3s ease;
    position: absolute;
-   top: -270px;
+   top: -300px;
+   cursor: not-allowed;
 
 
    &:hover{
-      top: 0px;
+      top:20px;
    }
 }
 
 #scroll-to:hover + .layer-info{
-   top: 0px;
+   top: 20px;
 }
 
 

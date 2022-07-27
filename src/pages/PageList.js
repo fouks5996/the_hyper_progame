@@ -92,6 +92,7 @@ export const PageList = () => {
 						article
 					)} </p>
 				</a>
+
 				<div class="layer-info">
 					<div style="padding:22px">
 						<p class="hover-info">  ${article.released} </p>
@@ -100,6 +101,7 @@ export const PageList = () => {
 						<p class="hover-content">  ${article.tags.map((el) => el.name)}votes</p>
 					</div>
 				</div>
+				
 			</article>`
 			)
 			.join(" ");

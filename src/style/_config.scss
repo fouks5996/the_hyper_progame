@@ -65,7 +65,8 @@ $font-regular: 'Avenir Next Regular';
 .movie-title{
   @include font($size-movie_title, $white, $font-bold);
   margin: 9px 0px 9px 0px;
-  width: fit-content
+  width: fit-content;
+  max-width: 360px
 }
 
 .subject-title{
