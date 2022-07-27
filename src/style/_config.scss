@@ -1,0 +1,121 @@
+@import './mixins';
+// ******
+// COLORS
+// ******
+$color-red: #D20A32;
+$color-red-hover: #d53a59;
+$black: 191919;
+$white: white;
+$grey: #616161;
+
+// ******
+// SPACING
+// ******
+$max-w: 1470px;
+$gap: 10px;
+
+// ******
+// TYPO
+// *****
+$size-title: 3rem;
+$size-sub_title: 2.25rem;
+$size-movie_title: 2rem;
+$size-paragraph: 1rem;
+$size-movie-info: 1.125rem;
+$size-movie-content: 0.90rem;
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Avenir Next Bold';
+  src: url('../assets/fonts/AvenirNextLTPro-Bold.otf');
+}
+@font-face {
+  font-family: 'Avenir Next Regular';
+  src: url('../assets/fonts/AvenirNextLTPro-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Avenir Next Medium';
+  src: url('../assets/fonts/AvenirNextCyr-Medium.ttf');
+}
+
+$font-bold: 'Avenir Next Bold';
+$font-medium: 'Avenir Next Medium';
+$font-regular: 'Avenir Next Regular';
+
+
+
+//**********************************************
+.title-red{
+  @include font($size-title, $color-red, $font-bold)
+}
+
+.title-white{
+  @include font($size-title, $white, $font-bold);
+  margin-bottom: 12px;
+}
+
+.movie-title{
+  @include font($size-movie_title, $white, $font-bold);
+  margin: 9px 0px 9px 0px;
+  width: fit-content
+}
+
+.subject-title{
+  @include font($size-sub_title, $color-red, $font-bold);
+  margin-bottom: 10px;
+}
+
+.content{
+  @include font($size-paragraph, $white, $font-medium)
+}
+
+.content-title{
+  @include font($size-paragraph, $white, $font-bold)
+}
+
+.rating-count{
+  @include font($size-movie_title, $color-red, $font-bold)
+}
+
+.hover-info{
+  @include font($size-movie-info, $white, $font-regular);
+  margin-bottom: 10px;
+}
+
+.hover-content{
+  @include font($size-movie-content, $white, $font-regular)
+}
+
+.footer-title{
+  @include font($size-paragraph, $white, $font-bold)
+}
+
+::placeholder{
+  color: $grey;
+  font-family: $font-regular;
+  font-size: $size-movie-info;
+}
+
+//**************************************************
+
+
+body{
+  background-color: $black;
+  margin: 0px 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #logo{
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,9 @@
+
+#list-filter, #see-more, #see-more1{
+   @include flex(row, center, center);
+   @include button($size-movie-info, $font-regular);
+   gap: $gap;
+   margin: 30px 0px;
+   width: fit-content;
+   cursor: pointer;
+}

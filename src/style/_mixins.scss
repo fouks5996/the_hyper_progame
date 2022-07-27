@@ -1,0 +1,30 @@
+// ******
+// MIXINS
+// ******
+@mixin font($size, $color, $font-family){
+   font-size: $size;
+   color: $color;
+   font-family: $font-family;
+ }
+ 
+ @mixin flex($direction, $justify, $align){
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify;
+   align-items: $align;
+ }
+
+
+ @mixin button($font-size, $font-weight){
+   background-color: $color-red;
+   font-size: $font-size;
+   font-family: $font-weight;
+   padding: 10px 30px;
+   border: none;
+   color: $white;
+   cursor: pointer;
+ 
+   &:hover{
+     background-color: $color-red-hover
+   }
+ }

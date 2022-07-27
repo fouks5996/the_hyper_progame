@@ -1,0 +1,52 @@
+.cardGame{
+   position: relative;
+   overflow: hidden;
+   transition: all 0.5s ease;
+
+
+   &:hover{
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+   }
+   img{
+      width: 380px;
+      height: 270px;
+      object-fit: cover;
+   }
+
+}
+
+.articles, #similar-game, #page-publisher{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 30px;
+   grid-auto-rows: repeat(100px, auto);
+
+   @media screen and (max-width: 1350px) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   @media screen and (max-width: 800px) {
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+
+.layer-info{
+   width: 380px;
+   height: 270px;
+   background-color: rgba(0, 0, 0, 0.668);
+   transition: all 0.3s ease;
+   position: absolute;
+   top: -270px;
+
+
+   &:hover{
+      top: 0px;
+   }
+}
+
+#scroll-to:hover + .layer-info{
+   top: 0px;
+}
+
+
+

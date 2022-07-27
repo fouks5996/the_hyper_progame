@@ -1,0 +1,86 @@
+#title-page-list{
+   max-width: $max-w;
+}
+
+#pageContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#list-content{
+   max-width: $max-w;
+}
+
+
+#list-filter{
+   position: relative;
+
+   .layer-sort{
+      width: 178px;
+      height: 0px;
+      position: absolute;
+      background-color: white;
+      top: 42px;
+      left: -1;
+      z-index: 2;
+      transition: all 0.1s ease;
+      @include flex(column, flex-start, flex-start);
+      padding-left: 15px;
+     
+      .reset-all{
+         color: $black;
+         text-decoration: underline;
+         margin-top: 10px;
+      }
+
+      &:hover{
+         height: 170px;
+      }
+   
+   }
+
+}
+
+.input-wrapper{
+   @include flex(row, center, center);
+   gap: 12px;
+   margin-top: 15px;
+}
+
+#list-filter:hover > .layer-sort{
+   height: 286px;
+}
+
+.layer-sort > div > input{
+   display: none;
+  margin: 0;
+}
+
+.layer-sort > div > label{
+   display: none;
+   margin-top: 2px;
+}
+
+.layer-sort  > p{
+   display: none;
+   margin-top: 2px;
+}
+
+#list-filter:hover > .layer-sort > div >  input{
+   display: block;
+}
+#list-filter:hover > .layer-sort >  div > label{
+   display: block;
+   color: black;
+}
+
+#list-filter:hover > .layer-sort  > p{
+   display: block;
+   color: black;
+}
+
+
+

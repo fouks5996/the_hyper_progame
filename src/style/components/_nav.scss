@@ -1,0 +1,45 @@
+nav{
+   padding: 40px 0px 40px 0px;
+   max-width: $max-w;
+   width: 100%
+
+}
+
+.nav-wrapper{
+   @include flex(row, space-between, center);
+   @media screen and (max-width: 800px) {
+      @include flex(column, space-between, center);
+      gap:20px;
+      text-align: center;
+   }
+}
+
+.search-wrapper{
+   width: fit-content;
+   height: fit-content;
+   border-radius: 20px;
+   position: relative;
+
+
+
+   svg{
+      position: absolute;
+      top: 15px;
+      left: 18px;
+   }
+
+   input[type=text]{
+      border-color: $white;
+      box-sizing: border-box;
+      background-color: transparent;
+      border-radius: 30px;
+      width: 400px;
+      padding: 15px 0px 15px 20px;
+      text-indent: 30px;
+      color: $white;
+
+      @include flex(row, center, center)
+
+   }
+}
+

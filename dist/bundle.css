@@ -1,0 +1,411 @@
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/style/index.scss ***!
+  \*************************************************************************************************************************************************************************************/
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(711a4eb654bf1139f123.otf);
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(94f2f163d4b698242fef.otf);
+}
+@font-face {
+  font-family: "Avenir Next Medium";
+  src: url(679388dbda7c117a5d00.ttf);
+}
+.title-red {
+  font-size: 3rem;
+  color: #D20A32;
+  font-family: "Avenir Next Bold";
+}
+
+.title-white {
+  font-size: 3rem;
+  color: white;
+  font-family: "Avenir Next Bold";
+  margin-bottom: 12px;
+}
+
+.movie-title {
+  font-size: 2rem;
+  color: white;
+  font-family: "Avenir Next Bold";
+  margin: 9px 0px 9px 0px;
+  width: fit-content;
+}
+
+.subject-title {
+  font-size: 2.25rem;
+  color: #D20A32;
+  font-family: "Avenir Next Bold";
+  margin-bottom: 10px;
+}
+
+.content {
+  font-size: 1rem;
+  color: white;
+  font-family: "Avenir Next Medium";
+}
+
+.content-title {
+  font-size: 1rem;
+  color: white;
+  font-family: "Avenir Next Bold";
+}
+
+.rating-count {
+  font-size: 2rem;
+  color: #D20A32;
+  font-family: "Avenir Next Bold";
+}
+
+.hover-info {
+  font-size: 1.125rem;
+  color: white;
+  font-family: "Avenir Next Regular";
+  margin-bottom: 10px;
+}
+
+.hover-content {
+  font-size: 0.9rem;
+  color: white;
+  font-family: "Avenir Next Regular";
+}
+
+.footer-title {
+  font-size: 1rem;
+  color: white;
+  font-family: "Avenir Next Bold";
+}
+
+::placeholder {
+  color: #616161;
+  font-family: "Avenir Next Regular";
+  font-size: 1.125rem;
+}
+
+body {
+  background-color: 191919;
+  margin: 0px 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #logo {
+  cursor: pointer;
+}
+
+.cardGame {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.cardGame:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.cardGame img {
+  width: 380px;
+  height: 270px;
+  object-fit: cover;
+}
+
+.articles, #similar-game, #page-publisher {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  grid-auto-rows: repeat(100px, auto);
+}
+@media screen and (max-width: 1350px) {
+  .articles, #similar-game, #page-publisher {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .articles, #similar-game, #page-publisher {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.layer-info {
+  width: 380px;
+  height: 270px;
+  background-color: rgba(0, 0, 0, 0.668);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: -270px;
+}
+.layer-info:hover {
+  top: 0px;
+}
+
+#scroll-to:hover + .layer-info {
+  top: 0px;
+}
+
+.page-detail-wrapper {
+  max-width: 1470px;
+  margin: 0 auto;
+}
+.page-detail-wrapper .page-detail-text {
+  margin: 70px 50px 30px 50px;
+  max-width: 1200px;
+}
+
+.page-detail {
+  position: relative;
+}
+.page-detail #return-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #D20A32;
+  font-size: 1rem;
+  font-family: "Avenir Next Regular";
+  padding: 10px 30px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.page-detail #return-back:hover {
+  background-color: #d53a59;
+}
+.page-detail .page-detail-infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 30px;
+}
+.page-detail .page-detail-info {
+  max-width: 400px;
+}
+
+.detail-image {
+  width: 100vw;
+  height: 65vh;
+  object-fit: cover;
+  object-position: top;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1350px) {
+  video {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 850px) {
+  video {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 550px) {
+  video {
+    width: 400px;
+  }
+}
+
+#screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  grid-auto-rows: repeat(400px, auto);
+}
+@media screen and (max-width: 1350px) {
+  #screenshots-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#screenshots-grid img {
+  max-width: 640px;
+}
+@media screen and (max-width: 850px) {
+  #screenshots-grid img {
+    max-width: 400px;
+  }
+}
+
+#list-filter, #see-more, #see-more1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #D20A32;
+  font-size: 1.125rem;
+  font-family: "Avenir Next Regular";
+  padding: 10px 30px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  gap: 10px;
+  margin: 30px 0px;
+  width: fit-content;
+  cursor: pointer;
+}
+#list-filter:hover, #see-more:hover, #see-more1:hover {
+  background-color: #d53a59;
+}
+
+nav {
+  padding: 40px 0px 40px 0px;
+  max-width: 1470px;
+  width: 100%;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+.search-wrapper {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  position: relative;
+}
+.search-wrapper svg {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+}
+.search-wrapper input[type=text] {
+  border-color: white;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 30px;
+  width: 400px;
+  padding: 15px 0px 15px 20px;
+  text-indent: 30px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#title-page-list {
+  max-width: 1470px;
+}
+
+#pageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#list-content {
+  max-width: 1470px;
+}
+
+#list-filter {
+  position: relative;
+}
+#list-filter .layer-sort {
+  width: 178px;
+  height: 0px;
+  position: absolute;
+  background-color: white;
+  top: 42px;
+  left: -1;
+  z-index: 2;
+  transition: all 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+#list-filter .layer-sort .reset-all {
+  color: 191919;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+#list-filter .layer-sort:hover {
+  height: 170px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#list-filter:hover > .layer-sort {
+  height: 286px;
+}
+
+.layer-sort > div > input {
+  display: none;
+  margin: 0;
+}
+
+.layer-sort > div > label {
+  display: none;
+  margin-top: 2px;
+}
+
+.layer-sort > p {
+  display: none;
+  margin-top: 2px;
+}
+
+#list-filter:hover > .layer-sort > div > input {
+  display: block;
+}
+
+#list-filter:hover > .layer-sort > div > label {
+  display: block;
+  color: black;
+}
+
+#list-filter:hover > .layer-sort > p {
+  display: block;
+  color: black;
+}
+
+#page-publisher {
+  margin: 0px 50px;
+  max-width: 1470px;
+}
+
+.underline:hover {
+  text-decoration: underline;
+}

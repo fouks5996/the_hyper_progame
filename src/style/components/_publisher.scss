@@ -1,0 +1,10 @@
+#page-publisher{
+   margin: 0px 50px;
+   max-width: $max-w;
+}
+
+.underline{
+   &:hover{
+      text-decoration: underline;
+   }
+}
