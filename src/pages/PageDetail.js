@@ -58,12 +58,21 @@ export const PageDetail = (argument) => {
 		await fetchStore(cleanedArgument);
 
 		const storeData = document.getElementById("buy-data");
+		console.log(storeArray);
 
-		storeData.innerHTML = storeArray.map(
-			(el) => `
-			${el.url}
+		storeData.innerHTML = storeArray
+			.map(
+				(el) => `
+			<a href=${el.url} target="_blank" class="content underline" > 
+			 💶 ${el.url
+					.replace("https://", "")
+					.replace("http://", "")
+					.split("/")
+					.shift()}    
+	  		</a>
 		`
-		);
+			)
+			.join("");
 	};
 
 	//*******************
@@ -198,8 +207,11 @@ export const PageDetail = (argument) => {
 
 		pageDetail.innerHTML = `
 		    <section class="page-detail">
+				<div class="img-wrapper">  
+					<img class="detail-image" src=${data.background_image}></img>
+					<a href=${data.website} target="_blank" id="game-website"> Check Website </a>
+				</div>
 
-				<img class="detail-image" src=${data.background_image}></img>
 				<div class="page-detail-wrapper">
 					<div class="page-detail-text">
 						<h1 class="title-white"> ${data.name}</h1>
@@ -244,7 +256,7 @@ export const PageDetail = (argument) => {
 						</div>
 						<div class="section">
 							<h2 class="subject-title"> Buy </h2>
-							<p class="content" id="buy-data">   </p>
+							<div class="content" id="buy-data">   </div>
 						</div>
 						<div class="section">
 							<h2 class="subject-title"> Trailer </h2>

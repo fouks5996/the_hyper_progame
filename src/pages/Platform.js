@@ -69,12 +69,18 @@ export const Platform = (argument) => {
 			return (platformChange.innerHTML = "Play Station");
 		if (platformChange.textContent == 3)
 			return (platformChange.innerHTML = "Xbox");
+		if (platformChange.textContent == 4)
+			return (platformChange.innerHTML = "iOS");
 		if (platformChange.textContent == 5)
 			return (platformChange.innerHTML = "Apple Macintosh");
 		if (platformChange.textContent == 6)
 			return (platformChange.innerHTML = "Linux");
 		if (platformChange.textContent == 7)
 			return (platformChange.innerHTML = "Nintendo");
+		if (platformChange.textContent == 8)
+			return (platformChange.innerHTML = "Android");
+		if (platformChange.textContent == 14)
+			return (platformChange.innerHTML = "Web");
 	};
 	showPlatform();
 };

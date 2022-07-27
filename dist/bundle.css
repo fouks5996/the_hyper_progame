@@ -192,11 +192,17 @@ body #logo {
   max-width: 400px;
 }
 
+.img-wrapper {
+  background-color: red;
+  position: relative;
+}
+
 .detail-image {
   width: 100vw;
   height: 65vh;
   object-fit: cover;
   object-position: top;
+  position: relative;
 }
 
 .content-wrapper {
@@ -247,7 +253,15 @@ body #logo {
   }
 }
 
-#list-filter, #see-more, #see-more1 {
+#buy-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#list-filter, #see-more, #see-more1, #game-website {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -264,8 +278,14 @@ body #logo {
   width: fit-content;
   cursor: pointer;
 }
-#list-filter:hover, #see-more:hover, #see-more1:hover {
+#list-filter:hover, #see-more:hover, #see-more1:hover, #game-website:hover {
   background-color: #d53a59;
+}
+
+#game-website {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
 }
 
 nav {

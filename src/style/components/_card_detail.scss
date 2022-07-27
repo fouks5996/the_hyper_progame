@@ -31,11 +31,17 @@
    }
 }
 
+.img-wrapper{
+   background-color: red;
+   position: relative;
+}
+
 .detail-image{
    width: 100vw;
    height: 65vh;
    object-fit: cover;
    object-position: top;
+   position: relative;
 }
 
 
@@ -77,4 +83,9 @@ video{
          max-width: 400px;
       }
    }
+}
+
+#buy-data{
+@include flex(column, center, flex-start);
+gap: 8px;
 }
