@@ -4,7 +4,7 @@ export const mapTags = (data) => {
 	tagInner.innerHTML = arr
 		.map(
 			(el) => `
-         <a href="#tag/${el.slug}" class="content underline" > 
+         <a href="#tag/${el.slug}" class="content underline transition-trigger" > 
              ${el.name}   
          </a>
       `

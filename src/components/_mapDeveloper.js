@@ -4,7 +4,7 @@ export const mapDeveloper = (data) => {
 	developerInner.innerHTML = arr
 		.map(
 			(el) => `
-         <a href="#developer/${el.slug}" class="content underline" > 
+         <a href="#developer/${el.slug}" class="content underline transition-trigger" > 
              ${el.name}   
          </a>
       `

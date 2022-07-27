@@ -481,3 +481,28 @@ input[type=radio]:checked + label {
 .underline:hover {
   text-decoration: underline;
 }
+
+.transition-layer {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: -100vw;
+  background-color: #D20A32;
+  opacity: 1;
+  z-index: 3;
+  animation-name: slideLayer;
+  animation-duration: 1.7s;
+  animation-timing-function: ease;
+}
+
+@keyframes slideLayer {
+  0% {
+    left: -100vw;
+  }
+  25% {
+    left: 0;
+  }
+  100% {
+    left: 100vw;
+  }
+}

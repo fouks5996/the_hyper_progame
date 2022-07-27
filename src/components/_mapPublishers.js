@@ -4,7 +4,7 @@ export const mapPublisher = (data) => {
 	publisherInner.innerHTML = arr
 		.map(
 			(el) => `
-         <a href="#publishers/${el.slug}" class="content underline" > 
+         <a href="#publishers/${el.slug}" class="content underline transition-trigger" > 
              ${el.name}   
          </a>
       `

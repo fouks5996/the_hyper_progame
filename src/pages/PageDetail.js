@@ -5,6 +5,7 @@ import { mapGenre } from "../components/_mapGenres";
 import { mapTags } from "../components/_mapTags";
 import { mapDeveloper } from "../components/_mapDeveloper";
 import { scrollToTop } from "../components/_scrollToTop";
+import { transitionLayer } from "../components/_transition_layer";
 
 export const PageDetail = (argument) => {
 	scrollToTop();
@@ -283,8 +284,12 @@ export const PageDetail = (argument) => {
 				</div>
 		    </section>
 		  `;
+		transitionLayer();
 	};
 	render();
 };
 const logo = document.getElementById("logo");
-logo.addEventListener("click", PageList(9));
+logo.addEventListener("click", function () {
+	PageList(9);
+	// transitionLayer();
+});

@@ -4,9 +4,11 @@ import { concatArray } from "../components/_concat";
 import { getParentPlatformsName } from "../components/_platforms_name";
 import { filterPlatform } from "../components/_filter";
 import { scrollToTop } from "../components/_scrollToTop";
+import { transitionLayer } from "../components/_transition_layer";
 
 export const PageList = () => {
 	scrollToTop();
+
 	// VARIABLES
 	const API_KEY = process.env.API_KEY;
 	let url1 = `https://api.rawg.io/api/games?key=${API_KEY}&page=1`;
@@ -44,7 +46,10 @@ export const PageList = () => {
 	};
 
 	// RENDER TITLE
-	showTitles(pageDetail, titlePageList);
+	setTimeout(() => {
+		console.log("render");
+		showTitles(pageDetail, titlePageList);
+	}, "500");
 
 	// RENDER FILTRES
 
@@ -55,7 +60,10 @@ export const PageList = () => {
 	// SEE MORE
 	const seeMore = document.getElementById("see-more");
 	const seeMore1 = document.getElementById("see-more1");
-	seeMore.style.display = "";
+	setTimeout(() => {
+		seeMore.style.display = "";
+	}, "500");
+
 	seeMore1.style.display = "none";
 
 	seeMore.addEventListener("click", function () {
@@ -79,6 +87,7 @@ export const PageList = () => {
 		bigArray = concatArray(bigArray, dataArray, dataArray2, num);
 
 		const inputNodeList = Array.from(document.getElementsByName("filtered"));
+
 		setTimeout(() => {
 			filterPlatform(inputNodeList, bigArray, seeMore, seeMore1);
 		}, "1000");
@@ -87,7 +96,9 @@ export const PageList = () => {
 			.map(
 				(article) => `
 			<article  class="cardGame" >
-				<a href="#pagedetail/${article.id}" id="scroll-to">                  
+				<a href="#pagedetail/${
+					article.id
+				}" id="scroll-to" class="transition-trigger">                  
 					<img class="item-image" src=${article.background_image}></img>
 					<h1 class="movie-title">${article.name}</h1>
 					<p id="svg-inside" class="hover-content"> ${getParentPlatformsName(
@@ -107,6 +118,9 @@ export const PageList = () => {
 			</article>`
 			)
 			.join(" ");
+		transitionLayer();
 	};
-	renderList(9);
+	setTimeout(() => {
+		renderList(9);
+	}, "500");
 };

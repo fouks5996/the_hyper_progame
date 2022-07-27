@@ -4,7 +4,7 @@ export const mapGenre = (data) => {
 	genreInner.innerHTML = arr
 		.map(
 			(el) => `
-         <a href="#genre/${el.slug}" class="content underline" > 
+         <a href="#genre/${el.slug}" class="content underline transition-trigger" > 
              ${el.name}   
          </a>
       `

@@ -2,6 +2,7 @@ import { PageList } from "./PageList";
 import { getParentPlatformsName } from "../components/_platforms_name";
 import { transString } from "../components/_transformString";
 import { scrollToTop } from "../components/_scrollToTop";
+import { transitionLayer } from "../components/_transition_layer";
 
 export const Publishers = (argument) => {
 	scrollToTop();
@@ -46,7 +47,9 @@ export const Publishers = (argument) => {
 				(article) => `
             
             <article class="cardGame" >
-				<a href="#pagedetail/${article.id}" id="scroll-to">                  
+				<a href="#pagedetail/${
+					article.id
+				}" id="scroll-to" class="transition-trigger">                  
 					<img class="item-image" src=${article.background_image}></img>
 					<h1 class="movie-title">${article.name}</h1>
 					<p id="svg-inside" class="hover-content"> ${getParentPlatformsName(
@@ -63,6 +66,7 @@ export const Publishers = (argument) => {
 			</article>`
 			)
 			.join(" ");
+		transitionLayer();
 	};
 
 	RenderPublishers();

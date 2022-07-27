@@ -5,7 +5,7 @@ export const mapPlatform = (data) => {
 	platformInner.innerHTML = getParentPlatforms(data).map(
 		(el) =>
 			`
-         <a href="#platform/${el.id}" class="content underline" > 
+         <a href="#platform/${el.id}" class="content underline transition-trigger" > 
          ${el.name} 
          </a>
       `

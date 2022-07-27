@@ -2,12 +2,11 @@ import { PageList } from "./PageList";
 import { getParentPlatformsName } from "../components/_platforms_name";
 import { transString } from "../components/_transformString";
 import { scrollToTop } from "../components/_scrollToTop";
+import { transitionLayer } from "../components/_transition_layer";
 
 export const Tag = (argument) => {
 	scrollToTop();
 	const API_KEY = process.env.API_KEY;
-	console.log("caca");
-
 	const titlePageList = document.getElementById("title-page-list");
 	const article = document.getElementById("article");
 	const listContent = document.getElementById("list-content");
@@ -47,7 +46,9 @@ export const Tag = (argument) => {
 				(article) => `
             
             <article class="cardGame" >
-				<a href="#pagedetail/${article.id}" id="scroll-to">                  
+				<a href="#pagedetail/${
+					article.id
+				}" id="scroll-to" class="transition-trigger">                  
 					<img class="item-image" src=${article.background_image}></img>
 					<h1 class="movie-title">${article.name}</h1>
 					<p id="svg-inside" class="hover-content"> ${getParentPlatformsName(
@@ -64,6 +65,7 @@ export const Tag = (argument) => {
 			</article>`
 			)
 			.join(" ");
+		transitionLayer();
 	};
 
 	RenderPublishers();
