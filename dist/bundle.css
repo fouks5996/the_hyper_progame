@@ -105,6 +105,19 @@ body #logo {
   cursor: pointer;
 }
 
+footer {
+  width: 100%;
+  max-width: 1470px;
+  margin-bottom: 30px;
+}
+footer div {
+  width: 439px;
+  height: 10px;
+  background-color: red;
+  margin: 15px 0px;
+  border-radius: 10px;
+}
+
 .cardGame {
   position: relative;
   overflow: hidden;
@@ -162,6 +175,16 @@ body #logo {
 .page-detail-wrapper .page-detail-text {
   margin: 70px 50px 30px 50px;
   max-width: 1200px;
+  position: relative;
+}
+
+.rating-pdp {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  font-family: "Avenir Next Bold";
+  color: #D20A32;
+  font-size: 1.9rem;
 }
 
 .page-detail {

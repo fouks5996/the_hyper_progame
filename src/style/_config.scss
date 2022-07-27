@@ -120,3 +120,17 @@ body{
     cursor: pointer;
   }
 }
+
+footer{
+  width: 100%;
+  max-width: $max-w;
+  margin-bottom: 30px;
+
+  div{
+    width: 439px; 
+    height: 10px; 
+    background-color: red;
+    margin: 15px 0px;
+    border-radius: 10px;
+  }
+}

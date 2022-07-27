@@ -214,7 +214,8 @@ export const PageDetail = (argument) => {
 
 				<div class="page-detail-wrapper">
 					<div class="page-detail-text">
-						<h1 class="title-white"> ${data.name}</h1>
+						<h1 class="title-white"> ${data.name} </h1>
+						<h2 class="rating-pdp" > ${data.rating}/5 - ${data.ratings_count} votes </h2>
 						<div class="content-wrapper">
 							<p class="content"> ${descriptionItem[0]}  </p>
 							<div> 
