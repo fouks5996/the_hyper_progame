@@ -3,8 +3,10 @@ import { showTitles } from "../components/_content";
 import { concatArray } from "../components/_concat";
 import { getParentPlatformsName } from "../components/_platforms_name";
 import { filterPlatform } from "../components/_filter";
+import { scrollToTop } from "../components/_scrollToTop";
 
 export const PageList = () => {
+	scrollToTop();
 	// VARIABLES
 	const API_KEY = process.env.API_KEY;
 	let url1 = `https://api.rawg.io/api/games?key=${API_KEY}&page=1`;
@@ -84,7 +86,7 @@ export const PageList = () => {
 		articleContent.innerHTML = bigArray
 			.map(
 				(article) => `
-			<article class="cardGame" >
+			<article  class="cardGame" >
 				<a href="#pagedetail/${article.id}" id="scroll-to">                  
 					<img class="item-image" src=${article.background_image}></img>
 					<h1 class="movie-title">${article.name}</h1>

@@ -1,8 +1,10 @@
 import { PageList } from "./PageList";
 import { getParentPlatformsName } from "../components/_platforms_name";
 import { transString } from "../components/_transformString";
+import { scrollToTop } from "../components/_scrollToTop";
 
 export const Developer = (argument) => {
+	scrollToTop();
 	const API_KEY = process.env.API_KEY;
 
 	const titlePageList = document.getElementById("title-page-list");

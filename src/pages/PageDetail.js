@@ -4,8 +4,10 @@ import { mapPlatform } from "../components/_mapPlatform";
 import { mapGenre } from "../components/_mapGenres";
 import { mapTags } from "../components/_mapTags";
 import { mapDeveloper } from "../components/_mapDeveloper";
+import { scrollToTop } from "../components/_scrollToTop";
 
 export const PageDetail = (argument) => {
+	scrollToTop();
 	// VARIABLES
 	const API_KEY = process.env.API_KEY;
 	const cleanedArgument = argument.trim().replace(/\s+/g, "-");
