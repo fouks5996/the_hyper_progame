@@ -13,6 +13,8 @@ export const PageList = () => {
 
 	// VARIABLES
 
+	console.log(location.href);
+
 	let url1 = `https://api.rawg.io/api/games?key=888640baf15f4cb9b302fbdbf68c620a&page=1`;
 	let url2 = `https://api.rawg.io/api/games?key=888640baf15f4cb9b302fbdbf68c620a&page=2`;
 
