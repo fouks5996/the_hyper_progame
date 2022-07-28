@@ -96,6 +96,6 @@ video{
 }
 
 #buy-data{
-@include flex(column, center, flex-start);
-gap: 8px;
+   @include flex(column, center, flex-start);
+   gap: 8px;
 }
