@@ -1,3 +1,5 @@
+import { transitionLayer } from "../components/_transition_layer";
+
 export const mapGenre = (data) => {
 	const genreInner = document.getElementById("genres-inner");
 	let arr = data.genres.map((el) => el);
@@ -10,4 +12,5 @@ export const mapGenre = (data) => {
       `
 		)
 		.join(" ");
+	transitionLayer();
 };

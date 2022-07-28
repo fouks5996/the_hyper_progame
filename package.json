@@ -26,6 +26,7 @@
 		"webpack-dev-server": "^4.9.3"
 	},
 	"dependencies": {
-		"aos": "^2.3.4"
+		"aos": "^2.3.4",
+		"scrollreveal": "^4.0.9"
 	}
 }

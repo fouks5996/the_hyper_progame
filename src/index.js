@@ -1,8 +1,5 @@
 import "./style/index.scss";
-import "./pages/PageList";
-import "./pages/PageDetail";
 import { routes } from "./routes";
-import "./components/_search";
 
 const callRoute = () => {
 	const { hash } = window.location;

@@ -1,3 +1,5 @@
+import { transitionLayer } from "../components/_transition_layer";
+
 export const mapTags = (data) => {
 	const tagInner = document.getElementById("tags-inner");
 	let arr = data.tags.map((el) => el);
@@ -10,4 +12,5 @@ export const mapTags = (data) => {
       `
 		)
 		.join(" ");
+	transitionLayer();
 };

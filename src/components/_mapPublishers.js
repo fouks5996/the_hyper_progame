@@ -1,3 +1,5 @@
+import { transitionLayer } from "../components/_transition_layer";
+
 export const mapPublisher = (data) => {
 	const publisherInner = document.getElementById("publisher-inner");
 	let arr = data.publishers.map((el) => el);
@@ -10,4 +12,5 @@ export const mapPublisher = (data) => {
       `
 		)
 		.join(" ");
+	transitionLayer();
 };

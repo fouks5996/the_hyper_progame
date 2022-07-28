@@ -125,6 +125,7 @@ footer{
   width: 100%;
   max-width: $max-w;
   margin-bottom: 30px;
+  display: none;
 
   div{
     width: 439px; 
@@ -133,6 +134,10 @@ footer{
     margin: 15px 0px;
     border-radius: 10px;
   }
+}
+
+lottie-player{
+  margin: 0 auto;
 }
 
 

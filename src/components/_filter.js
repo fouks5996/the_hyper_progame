@@ -15,11 +15,13 @@ export const filterPlatform = (nodeList, array, btn, btn1) => {
 				} else {
 					article[a].style.display = "none";
 				}
+				const resetBtn = document.getElementById("reset-btn");
+
+				resetBtn.addEventListener("click", function () {
+					article[a].style.display = "";
+					label.textContent = `Filtrer`;
+				});
 			}
-			const resetBtn = document.getElementById("reset-btn");
-			resetBtn.addEventListener("click", function () {
-				location.reload();
-			});
 		});
 	}
 };

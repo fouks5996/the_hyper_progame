@@ -1,4 +1,4 @@
-import { PageList } from "./PageList";
+// import { PageList } from "./PageList";
 import { mapPublisher } from "../components/_mapPublishers";
 import { mapPlatform } from "../components/_mapPlatform";
 import { mapGenre } from "../components/_mapGenres";
@@ -6,11 +6,12 @@ import { mapTags } from "../components/_mapTags";
 import { mapDeveloper } from "../components/_mapDeveloper";
 import { scrollToTop } from "../components/_scrollToTop";
 import { transitionLayer } from "../components/_transition_layer";
+const API_KEY = process.env.NEW_API_KEY;
 
 export const PageDetail = (argument) => {
 	scrollToTop();
 	// VARIABLES
-	const API_KEY = process.env.API_KEY;
+
 	const cleanedArgument = argument.trim().replace(/\s+/g, "-");
 	let data = [];
 	let descriptionItem = [];
@@ -21,7 +22,7 @@ export const PageDetail = (argument) => {
 
 	// FETCH GAMES
 	const fetchGame = async (url, argument) => {
-		await fetch(`${url}/${argument}?key=${API_KEY}`)
+		await fetch(`${url}/${argument}?key=888640baf15f4cb9b302fbdbf68c620a`)
 			.then((response) => response.json())
 			.then((responseData) => {
 				data = responseData;
@@ -40,16 +41,13 @@ export const PageDetail = (argument) => {
 		return descriptionItem;
 	};
 
-	const getGenres = (data) => {
-		return data.genres.map((el) => el.name);
-	};
 	//*******************
 	//RENDER STORES
 	//*******************
 	let storeArray = [];
 	const fetchStore = async (argument) => {
 		await fetch(
-			`https://api.rawg.io/api/games/${argument}/stores?key=${API_KEY}`
+			`https://api.rawg.io/api/games/${argument}/stores?key=888640baf15f4cb9b302fbdbf68c620a`
 		)
 			.then((res) => res.json())
 			.then((res) => {
@@ -59,10 +57,7 @@ export const PageDetail = (argument) => {
 
 	const renderStore = async () => {
 		await fetchStore(cleanedArgument);
-
 		const storeData = document.getElementById("buy-data");
-		console.log(storeArray);
-
 		storeData.innerHTML = storeArray
 			.map(
 				(el) => `
@@ -85,7 +80,7 @@ export const PageDetail = (argument) => {
 
 	const fetchTrailer = async (argument) => {
 		await fetch(
-			`https://api.rawg.io/api/games/${argument}/movies?key=${API_KEY}`
+			`https://api.rawg.io/api/games/${argument}/movies?key=888640baf15f4cb9b302fbdbf68c620a`
 		)
 			.then((res) => res.json())
 			.then((res) => {
@@ -95,7 +90,7 @@ export const PageDetail = (argument) => {
 
 	const renderTrailer = async () => {
 		await fetchTrailer(cleanedArgument);
-
+		if (trailerArray.length == 0) return;
 		const trailerData = document.getElementById("movie-data");
 		trailerData.innerHTML = `
 		<source src="${trailerArray[0].data.max}" type="video/mp4">
@@ -109,7 +104,7 @@ export const PageDetail = (argument) => {
 
 	const fetchscreenShots = async (argument) => {
 		await fetch(
-			`https://api.rawg.io/api/games/${argument}/screenshots?key=${API_KEY}`
+			`https://api.rawg.io/api/games/${argument}/screenshots?key=888640baf15f4cb9b302fbdbf68c620a`
 		)
 			.then((res) => res.json())
 			.then((res) => {
@@ -119,6 +114,8 @@ export const PageDetail = (argument) => {
 
 	const renderscreenShots = async () => {
 		await fetchscreenShots(cleanedArgument);
+
+		if (screenShotsArray.length == 0) return;
 
 		const screenShotsData = document.getElementById("screenshots-grid");
 
@@ -138,7 +135,7 @@ export const PageDetail = (argument) => {
 
 	const fetchsimilarGame = async (argument) => {
 		await fetch(
-			`https://api.rawg.io/api/games/${argument}/game-series?key=${API_KEY}`
+			`https://api.rawg.io/api/games/${argument}/game-series?key=888640baf15f4cb9b302fbdbf68c620a`
 		)
 			.then((res) => res.json())
 			.then((res) => {
@@ -212,16 +209,16 @@ export const PageDetail = (argument) => {
 
 		pageDetail.innerHTML = `
 		    <section class="page-detail">
-				<div class="img-wrapper">  
+				<div class="img-wrapper image-transition">  
 					<img class="detail-image" src=${data.background_image}></img>
 					<a href=${data.website} target="_blank" id="game-website"> Check Website </a>
 				</div>
 
 				<div class="page-detail-wrapper">
 					<div class="page-detail-text">
-						<h1 class="title-white"> ${data.name} </h1>
-						<h2 class="rating-pdp" > ${data.rating}/5 - ${data.ratings_count} votes </h2>
-						<div class="content-wrapper">
+						<h1 class="title-white reveal3"> ${data.name} </h1>
+						<h2 class="rating-pdp reveal3" > ${data.rating}/5 - ${data.ratings_count} votes </h2>
+						<div class="content-wrapper reveal3">
 							<p class="content"> ${descriptionItem[0]}  </p>
 							<div> 
 								<p class="content-title"> Plot </p>
@@ -232,7 +229,7 @@ export const PageDetail = (argument) => {
 								<p class="content"> ${descriptionItem[2]}  </p>
 							</div>
 						</div>
-						<div class="page-detail-infos">
+						<div class="page-detail-infos reveal3">
 							<div class="page-detail-info"> 
 								<p class="content-title"> Released Date </p>
 								<p class="content"> ${data.released} </p> 
@@ -260,23 +257,23 @@ export const PageDetail = (argument) => {
 								<div id="tags-inner"> </div>
 							</div>
 						</div>
-						<div class="section">
+						<div class="section reveal3">
 							<h2 class="subject-title"> Buy </h2>
 							<div class="content" id="buy-data">   </div>
 						</div>
-						<div class="section">
+						<div class="section reveal3">
 							<h2 class="subject-title"> Trailer </h2>
 							<video controls width="1250" id="movie-data">
     							
 							</video>
 						</div>
-						<div class="section">
+						<div class="section reveal3">
 							<h2 class="subject-title"> Screenshots </h2>
 							<div id="screenshots-grid">
 
 							</div>
 						</div>
-						<div class="section">
+						<div class="section reveal3">
 							<h2 class="subject-title"> Similar Games </h2>
 							<div id="similar-game"> </div>
 						</div>
@@ -284,12 +281,21 @@ export const PageDetail = (argument) => {
 				</div>
 		    </section>
 		  `;
+
+		var scaleup = {
+			scale: 0.7,
+			delay: 700,
+		};
+		ScrollReveal().reveal(".image-transition", scaleup);
+
+		var slideUp = {
+			distance: "54%",
+			origin: "bottom",
+			opacity: 0,
+			interval: 300,
+		};
+		ScrollReveal().reveal(".reveal3", slideUp);
 		transitionLayer();
 	};
 	render();
 };
-const logo = document.getElementById("logo");
-logo.addEventListener("click", function () {
-	PageList(9);
-	// transitionLayer();
-});

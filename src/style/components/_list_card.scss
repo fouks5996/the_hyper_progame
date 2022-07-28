@@ -15,9 +15,13 @@
    width: 100%;
 }
 
+.add-white{
+   background-color: white !important;
+}
 
 #list-filter{
    position: relative;
+   z-index: 999999999999;
 
    .layer-sort{
       width: 220px;
@@ -27,7 +31,7 @@
       border-radius: 5px;
       top: 42px;
       left: -1;
-      z-index: 2;
+      z-index: 999999999999;
       transition: all 0.1s ease;
       @include flex(column, flex-start, flex-start);
       padding-left: 15px;

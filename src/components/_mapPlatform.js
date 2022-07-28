@@ -1,5 +1,5 @@
 import { getParentPlatforms } from "./_platform";
-
+import { transitionLayer } from "../components/_transition_layer";
 export const mapPlatform = (data) => {
 	const platformInner = document.getElementById("platforms-inner");
 	platformInner.innerHTML = getParentPlatforms(data).map(
@@ -10,4 +10,5 @@ export const mapPlatform = (data) => {
          </a>
       `
 	);
+	transitionLayer();
 };

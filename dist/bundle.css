@@ -109,6 +109,7 @@ footer {
   width: 100%;
   max-width: 1470px;
   margin-bottom: 30px;
+  display: none;
 }
 footer div {
   width: 439px;
@@ -116,6 +117,10 @@ footer div {
   background-color: red;
   margin: 15px 0px;
   border-radius: 10px;
+}
+
+lottie-player {
+  margin: 0 auto;
 }
 
 .cardGame {
@@ -379,8 +384,13 @@ nav {
   width: 100%;
 }
 
+.add-white {
+  background-color: white !important;
+}
+
 #list-filter {
   position: relative;
+  z-index: 999999999999;
 }
 #list-filter .layer-sort {
   width: 220px;
@@ -390,7 +400,7 @@ nav {
   border-radius: 5px;
   top: 42px;
   left: -1;
-  z-index: 2;
+  z-index: 999999999999;
   transition: all 0.1s ease;
   display: flex;
   flex-direction: column;
@@ -482,6 +492,11 @@ input[type=radio]:checked + label {
   text-decoration: underline;
 }
 
+.text-underline {
+  text-decoration: underline;
+  text-decoration-color: #D20A32;
+}
+
 .transition-layer {
   position: fixed;
   height: 100vh;
@@ -489,7 +504,7 @@ input[type=radio]:checked + label {
   left: -100vw;
   background-color: #D20A32;
   opacity: 1;
-  z-index: 3;
+  z-index: 1000000000000000300000000;
   animation-name: slideLayer;
   animation-duration: 1.7s;
   animation-timing-function: ease;

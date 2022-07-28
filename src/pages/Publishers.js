@@ -1,4 +1,4 @@
-import { PageList } from "./PageList";
+// import { PageList } from "./PageList";
 import { getParentPlatformsName } from "../components/_platforms_name";
 import { transString } from "../components/_transformString";
 import { scrollToTop } from "../components/_scrollToTop";
@@ -6,7 +6,7 @@ import { transitionLayer } from "../components/_transition_layer";
 
 export const Publishers = (argument) => {
 	scrollToTop();
-	const API_KEY = process.env.API_KEY;
+	const API_KEY = "888640baf15f4cb9b302fbdbf68c620a";
 
 	const titlePageList = document.getElementById("title-page-list");
 	const article = document.getElementById("article");
@@ -37,16 +37,16 @@ export const Publishers = (argument) => {
 		await fetchPublishers1(url1);
 
 		publisherTitle.innerHTML = `
-      <h1 class="title-white" style="margin-left:45px; margin-bottom: 30px"> Les titres de ${transString(
+      <h1 class="title-white" style="margin-left:45px; margin-bottom: 30px"> Les titres de <span class="text-underline"> ${transString(
 				argument
-			)} </h1>
+			)}</span> </h1>
       `;
 
 		pagePublisher.innerHTML = array1
 			.map(
 				(article) => `
             
-            <article class="cardGame" >
+            <article class="cardGame reveal3" >
 				<a href="#pagedetail/${
 					article.id
 				}" id="scroll-to" class="transition-trigger">                  
@@ -67,10 +67,19 @@ export const Publishers = (argument) => {
 			)
 			.join(" ");
 		transitionLayer();
+		var slideUp = {
+			distance: "14%",
+			origin: "bottom",
+			opacity: 0,
+			delay: 600,
+			interval: 150,
+			scale: 0.85,
+		};
+		ScrollReveal().reveal(".reveal3", slideUp);
 	};
 
 	RenderPublishers();
 };
 
-const logo = document.getElementById("logo");
-logo.addEventListener("click", PageList(9));
+// const logo = document.getElementById("logo");
+// logo.addEventListener("click", PageList(9));
