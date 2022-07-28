@@ -15,12 +15,12 @@ export const filterPlatform = (nodeList, array, btn, btn1) => {
 				} else {
 					article[a].style.display = "none";
 				}
-				const resetBtn = document.getElementById("reset-btn");
-
-				resetBtn.addEventListener("click", function () {
-					location.reload();
-				});
 			}
+			const resetBtn = document.getElementById("reset-btn");
+
+			resetBtn.addEventListener("click", function () {
+				location.reload();
+			});
 		});
 	}
 };
