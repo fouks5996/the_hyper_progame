@@ -11,10 +11,6 @@ import { transitionLayer } from "../components/_transition_layer";
 export const PageList = () => {
 	scrollToTop();
 
-	// VARIABLES
-
-	console.log(location.href);
-
 	let url1 = `https://api.rawg.io/api/games?key=888640baf15f4cb9b302fbdbf68c620a&page=1`;
 	let url2 = `https://api.rawg.io/api/games?key=888640baf15f4cb9b302fbdbf68c620a&page=2`;
 
@@ -30,7 +26,8 @@ export const PageList = () => {
 	const pagePublisher = document.getElementById("page-publisher");
 	const publisherTitle = document.getElementById("publisher-title");
 	const footer = document.getElementById("footer");
-
+	const seeMore = document.getElementById("see-more");
+	seeMore.style.display = "none";
 	footer.style.display = "none";
 	publisherTitle.style.display = "none";
 	listContent.style.display = "";
@@ -65,7 +62,7 @@ export const PageList = () => {
 	input.addEventListener("keyup", searchTrigger);
 
 	// SEE MORE
-	const seeMore = document.getElementById("see-more");
+
 	const seeMore1 = document.getElementById("see-more1");
 
 	seeMore.style.display = "none";
@@ -93,7 +90,6 @@ export const PageList = () => {
 		const inputNodeList = Array.from(document.getElementsByName("filtered"));
 
 		footer.style.display = "block";
-		seeMore.style.display = "";
 		lottie.style.display = "none";
 
 		setTimeout(() => {
@@ -139,5 +135,10 @@ export const PageList = () => {
 		};
 		ScrollReveal().reveal(".reveal3", slideUp);
 	};
+
+	setTimeout(() => {
+		seeMore.style.display = "";
+	}, "3000");
+
 	renderList(9);
 };
